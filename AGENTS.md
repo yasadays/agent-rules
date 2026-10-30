@@ -21,7 +21,7 @@ Rules 2 and 3 never override rule 1. If a project file conflicts with a rule bel
 | `rules/03-simplicity-and-architecture.md` | Details for Rule 03: think before structure, DRY, KISS.                   |
 | `rules/04-complement-the-human.md`        | Details for Rule 04: complement the human, do not replace them.           |
 
-These are located in the same place this file is. Read this if you need a better understanding of the guidelines, not on every session.
+These files are located in the same place this file is. Only read if you need a better understanding of the guidelines, not on every session.
 
 ## R1: Explain before you act
 
