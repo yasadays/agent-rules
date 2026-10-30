@@ -2,7 +2,7 @@
 
 This repository holds personal development guidelines for AI coding agents (Pi, Claude Code, Codex, etc). In the era where agentic development slowly becomes the norm, one must control their machines.
 
-This is an opinionated set of rules, it works for me, but not neccesarily you, so please give the guidelines a read before installing.
+This is an opinionated set of rules. It works for me, but not neccesarily you, so please give the guidelines a read before installing.
 
 ## Layout
 
@@ -16,7 +16,7 @@ This is an opinionated set of rules, it works for me, but not neccesarily you, s
 
 ## Install
 
-Take note of where your agent of choice reads the global `AGENTS.md`. Either copy the files directly or symlink `AGENTS.md` and `rules`. I prefer the latter, since you can maintain copies for any number of agents in one place. Please refer to the agent's official documentation on where this path is.
+Take note of where your agent of choice reads the global `AGENTS.md` (refer to their official docs). Either copy the files directly or symlink `AGENTS.md` and `rules`. I prefer the latter, since you can maintain copies for any number of agents in one place.
 
 In case where the agent can't read a global `AGENTS.md`, simply instruct them like this:
 
