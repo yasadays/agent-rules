@@ -50,6 +50,30 @@ DRY is about knowledge, not text. Two identical `if` statements are fine, but tw
 - Explicit beats implicit, except when it is pure noise.
 - If a comment explains _what_, the code is unclear. If it explains _why_, keep it.
 
+## The size ceiling
+
+A source file you create or modify stays under **5,000 bytes or 500 LOC, whichever is lower**. Both are hard ceilings, not targets. Most files should land far below them.
+
+This is KISS with a number attached. A file that crosses the line is usually doing more than one job, and every reader pays for it. Split by responsibility: one module, one reason to change, one obvious name. Never split by line count.
+
+- **Source** means code you or a build reads as code: application code, tests, scripts, config-as-code.
+- **Not source:** documentation, lockfiles, generated output, vendored dependencies, data files. Those follow their own rules.
+- Count bytes on disk and lines as newlines. The lower ceiling wins: a 4,900-byte file with 600 lines still fails.
+- If a file you must modify is already over, say so before editing. Split it as part of the task, or get explicit permission to leave it. Do not quietly grow it.
+- A split that scatters one concept across four files is not a win. Move a seam, not a line count.
+
+## Documentation is not source code
+
+Documentation exists so a human can understand the shape of the system without reading every file. It is not a second copy of the source.
+
+- Describe flow, architecture, boundaries, decisions, and tradeoffs. The reader should finish knowing how the pieces fit and why they fit that way.
+- Do not put source code in documentation. No snippets, no function bodies, no full files, no line-by-line walkthroughs. If the reader needs the code, point at the file.
+- If a section only makes sense with the code beside it, it is doing the code's job. Cut it or replace it with one sentence about intent.
+- Keep it current. Stale documentation is worse than none, because it lies with authority.
+- In code, a comment explains _why_. In a document, prose explains _what the system does and why it is shaped that way_. Do not swap the two.
+
+The size ceiling does not apply to documentation. Its limit is the reader's attention: long enough to explain the shape, short enough to be read.
+
 ## What counts as architectural
 
 Treat the decision as architectural if any of these is true:
