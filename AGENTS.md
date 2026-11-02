@@ -7,9 +7,21 @@ Operating rules for AI coding agents.
 1. Explicit instructions from the human in the current session.
 2. Project-level `AGENTS.md` / `CLAUDE.md` in the repository.
 3. This file.
-4. Agent system prompt.
+4. Loaded skills and process packs (e.g. `superpowers`).
+5. Agent system prompt.
 
 Rules 2 and 3 never override rule 1. If a project file conflicts with a rule below, follow the project file and say which rule you are departing from.
+
+## What This File Is
+
+A global rule file. An agent loads it at the start of every session, in every repository, before it has read any project file, and holds it alongside its system prompt, the project's own `AGENTS.md`, and any skill it pulls in later. It is instruction, not documentation.
+
+Four consequences:
+
+- **Nothing here is project-specific.** It cannot know what the repository does; project files supply that.
+- **It is harness-neutral,** shared by Pi, Claude Code, Codex, and others. Tool specifics come from the harness, not from here.
+- **It is loaded before skills.** A process pack (brainstorming, plan-then-execute, TDD) may mandate work these rules discourage: a design doc for a one-line fix, a plan file for a typo, an approval gate before an edit the human already asked for. These rules win unless the human invoked that skill by name this session. Say which rule it fights, then follow the human's call.
+- **Compaction does not remove it.** The text lives in the system prompt, which Pi replays verbatim beside the summary and never summarizes. Read this file again anyway once a compaction lands: re-anchoring on the text is cheaper than trusting a summary of your own conduct, and drift is likeliest right after the surrounding context stops being your own words.
 
 ## Layout
 
