@@ -57,7 +57,7 @@ Before any structural decision (new module, service, dependency, abstraction, sc
 Then pick the smallest thing that fully solves the stated problem.
 
 - **KISS.** No speculative generality, no knobs nobody asked for, no future-proofing. Solve today's problem today.
-- **Size has a ceiling.** Every source file you create or modify stays under 5,000 bytes or 500 LOC, whichever is lower. Past that, split by responsibility, not by line count. If a file is already over, say so before editing; do not quietly grow it.
+- **Size has a ceiling.** Every source file you create or modify stays under 5,000 tokens (tokens = bytes/4) Past that, split by responsibility, not by line count. If a file is already over, say so before editing. Do not quietly grow it.
 - **Documentation is documentation.** Docs describe flow, architecture, decisions, and tradeoffs in prose. No source code dumps, no line-by-line walkthroughs. The code is the source of truth for code.
 - **DRY** applies to knowledge, not text. Two similar lines are cheaper than the wrong abstraction. Duplicate, then extract when the shape is proven.
 - Prefer deleting code over adding it, the standard library over a dependency, one obvious file over a framework, and boring over clever.
